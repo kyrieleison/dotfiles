@@ -1,0 +1,23 @@
+{
+  "recommendations": [
+    "arcticicestudio.nord-visual-studio-code",
+    "bung87.rails",
+    "bung87.vscode-gemfile",
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
+    "emilast.LogFileHighlighter",
+    "IBM.output-colorizer",
+    "iliazeus.vscode-ansi",
+    "octref.vetur",
+    "qezhu.gitlink",
+    "rebornix.ruby",
+    "shanehofstetter.rails-i18n",
+    "sianglim.slim",
+    "sporto.rails-go-to-spec",
+    "vscodevim.vim",
+    "wingrunr21.vscode-ruby"
+  ],
+  "unwantedRecommendations": [
+
+  ]
+}
