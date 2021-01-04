@@ -22,6 +22,9 @@ defaults write com.apple.dock show-recents -bool false
 # Wipe all app icons from the Dock
 defaults write com.apple.dock persistent-apps -array
 
+# Add scroll gesture in the Dock
+defaults write com.apple.dock scroll-to-open -bool true
+
 # Set the icon size
 defaults write com.apple.dock tilesize -int 50
 
