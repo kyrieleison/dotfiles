@@ -99,7 +99,8 @@ export PATH="$PATH:/usr/local/opt/curl/bin"
 # uninstall by removing these lines or running `tabtab uninstall sls`
 # [[ -f /Users/yuka.sato/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/yuka.sato/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
 
-# Disable iterm2 shell integration
-# test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+# Setup Google Cloud SDK
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
 echo 'Loaded ~/.zshrc'
