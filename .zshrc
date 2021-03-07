@@ -9,12 +9,15 @@ export VISUAL='vim'
 export PAGER='less'
 export LANG=ja_JP.UTF-8
 export PATH="$HOME/bin:$PATH"
+export CLICOLOR=1
+export TERM=xterm-256color
 
-# Read plugins
-fpath=(
-  $HOME/.zsh.d/plugins/zsh-completions/src(N-/)
-  $fpath
-)
+# Set opt
+# see: http://zsh.sourceforge.net/Doc/Release/Options.html
+setopt no_beep
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt share_history
 
 # Autoload
 autoload -U colors && colors
@@ -41,9 +44,6 @@ alias gbrd='git branch --merged | grep -vE "^\*|master$|develop$" | xargs -I % g
 # Setup direnv
 [ -x /usr/local/bin/direnv ] && eval "$(direnv hook zsh)"
 
-# Setup npm
-# export PATH="$PATH:$(npm bin -g)"
-
 # Setup peco
 bindkey -e
 
@@ -65,41 +65,32 @@ if $(which peco > /dev/null); then
   bindkey '^r' peco-select-history
 fi
 
-# Setup mysql
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+# Setup zsh-completions
+# see: https://formulae.brew.sh/formula/zsh-completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
-# Setup imagemagick
-export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
-export PKG_CONFIG_PATH="/usr/local/opt/imagemagick@6/lib/pkgconfig"
+  autoload -Uz compinit
+  compinit
+fi
 
 # Setup curl
 export PATH="$PATH:/usr/local/opt/curl/bin"
 
-# Setup openssl
-# export LDFLAGS='-L/usr/local/opt/openssl/lib'
-# export CPPFLAGS='-I/usr/local/opt/openssl/include'
-# export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig:$PKG_CONFIG_PATH"
-
-# 2020/06/18 Resetup openssl
+# Setup openssl@1.1
 # export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 # export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 # export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 # export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
-# Setup yarn
-# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# Setup mysql@5.7
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
-# Setup serverless
+# Setup imagemagick@6
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+# export PKG_CONFIG_PATH="/usr/local/opt/imagemagick@6/lib/pkgconfig"
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-# [[ -f /Users/yuka.sato/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/yuka.sato/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh
-
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-# [[ -f /Users/yuka.sato/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/yuka.sato/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
-
-# Setup Google Cloud SDK
+# Setup google-cloud-sdk
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
