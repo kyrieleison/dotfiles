@@ -3,6 +3,7 @@
   "editor.fontFamily": "Monaco, monospace",
   "editor.fontSize": 12,
   "files.trimTrailingWhitespace": true,
+  "terminal.external.osxExec": "iTerm2.app",
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.fontSize": 12,
   "workbench.colorTheme": "Nord",
@@ -11,5 +12,6 @@
   "workbench.tree.indent": 12,
   "git.autofetch": true,
   "ruby.intellisense": "rubyLocate",
-  "vim.useSystemClipboard": true
+  "vim.useSystemClipboard": true,
+  "editor.minimap.enabled": false
 }

@@ -28,5 +28,25 @@
     "key": "s k",
     "command": "workbench.action.focusBelowGroup",
     "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
+  },
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "explorerViewletFocus && listFocus && explorerViewletVisible && !inputFocus"
+  },
+  {
+    "key": "n",
+    "command": "explorer.newFile",
+    "when": "explorerViewletFocus && listFocus &&explorerViewletVisible && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus && listFocus &&explorerViewletVisible && !inputFocus"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "explorerViewletFocus && listFocus &&explorerViewletVisible && !inputFocus"
   }
 ]
