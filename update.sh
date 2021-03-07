@@ -2,6 +2,7 @@
 
 set -eux
 
+brew update
 brew upgrade
-brew bundle dump --force
-brew bundle cleanup
+
+source $HOME/dotfiles/sync.sh

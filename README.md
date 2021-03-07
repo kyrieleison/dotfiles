@@ -23,3 +23,11 @@
 ```sh
 % cd $HOME/dotfiles && ./update.sh
 ```
+
+## Sync
+インストールされているライブラリをBrewfileに反映します。
+または、Brewfileにあるライブラリがインストールされていなければインストールします。
+
+```sh
+% cd $HOME/dotfiles && ./sync.sh
+```
