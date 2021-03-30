@@ -10,6 +10,8 @@ brew "anyenv"
 brew "awscli"
 brew "pkg-config"
 brew "direnv"
+brew "gobject-introspection"
+brew "harfbuzz"
 brew "ffmpeg"
 brew "imagemagick@6"
 brew "innotop"
@@ -20,6 +22,7 @@ brew "nginx", restart_service: true
 brew "packer"
 brew "peco"
 brew "redis", restart_service: true
+brew "shared-mime-info"
 brew "tig"
 brew "tmux"
 brew "tree"
@@ -32,6 +35,7 @@ brew "tkengo/highway/highway"
 brew "trustdock/tools/trustdock", args: ["HEAD"]
 cask "chromedriver"
 cask "clipy"
+cask "docker"
 cask "firefox"
 cask "google-chrome"
 cask "google-cloud-sdk"
@@ -48,9 +52,4 @@ cask "visual-studio-code"
 cask "wkhtmltopdf"
 cask "zoom"
 mas "Bear", id: 1091189122
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "Xcode", id: 497799835
