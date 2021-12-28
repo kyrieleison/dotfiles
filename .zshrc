@@ -78,10 +78,10 @@ fi
 export PATH="$PATH:/usr/local/opt/curl/bin"
 
 # Setup openssl@1.1
-# export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-# export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-# export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-# export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
 # Setup mysql@5.7
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
@@ -95,3 +95,5 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.in
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
 echo 'Loaded ~/.zshrc'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

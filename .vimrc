@@ -80,10 +80,29 @@ NeoBundle 'tomlion/vim-solidity'
 " vue
 NeoBundle 'posva/vim-vue'
 NeoBundle 'leafOfTree/vim-vue-plugin'
+" go
+NeoBundle 'prabirshrestha/async.vim'
+NeoBundle 'prabirshrestha/asyncomplete.vim'
+NeoBundle 'prabirshrestha/asyncomplete-lsp.vim'
+NeoBundle 'prabirshrestha/vim-lsp'
+NeoBundle 'mattn/vim-lsp-settings'
+NeoBundle 'mattn/vim-goimports'
 
 " vim-jsx {{{
 let g:jsx_ext_required = 0
 " }}}
+
+" vim-lsp {{{
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+" }}}
+
+" インクリメンタルサーチ
+NeoBundle 'junegunn/fzf'
+NeoBundle 'junegunn/fzf.vim'
+
+" ctag生成
+NeoBundle 'szw/vim-tags'
 
 " カラースキーマ
 NeoBundle 'w0ng/vim-hybrid'
@@ -249,8 +268,32 @@ nnoremap sq :<C-u>q<CR>
 " バッファ一覧
 " nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 
+" ファイルの曖昧検索
+nnoremap <Leader>f :FZF<CR>
+" ファイル全文の曖昧検索
+nnoremap <Leader>r :Rg<CR>
+
 " alias :e %:h -> :e %%
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%: h').'/' : '%%'
 
 " alias :Explore -> :E
 command! E Explore
+
+" カーソル設定
+let &t_SI .= "\e[6 q" " 挿入モードで非点滅のbarカーソル
+let &t_EI .= "\e[2 q" " ノーマルモードで非点滅のblockカーソル
+
+" fzf設定
+function! s:fzf_neighbouring_files()
+  let current_file = expand("%")
+  let cwd = fnamemodify(current_file, ':p:h')
+  let command = 'hw "" ' . cwd
+
+  call fzf#run({
+        \ 'source': command,
+        \ 'sink':   'e',
+        \ 'options': '-m -x +s',
+        \ 'window':  'enew' })
+endfunction
+
+command! FZFNeigh call s:fzf_neighbouring_files()
