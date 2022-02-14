@@ -154,10 +154,7 @@
       },
       "heroku/brew/heroku": {
         "version": "7.59.2",
-        "bottle": false,
-        "options": {
-          "link": false
-        }
+        "bottle": false
       },
       "jq": {
         "version": "1.6",
@@ -1839,6 +1836,12 @@
         "version": "7.9.2",
         "options": {
           "full_name": "1password"
+        }
+      },
+      "notion": {
+        "version": "2.0.19",
+        "options": {
+          "full_name": "notion"
         }
       }
     },

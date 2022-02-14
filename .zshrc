@@ -44,6 +44,9 @@ alias gbrd='git branch --merged | grep -vE "^\*|master$|develop$" | xargs -I % g
 # Setup direnv
 [ -x /usr/local/bin/direnv ] && eval "$(direnv hook zsh)"
 
+# Setup fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Setup peco
 bindkey -e
 
@@ -79,8 +82,10 @@ export PATH="$PATH:/usr/local/opt/curl/bin"
 
 # Setup openssl@1.1
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+# For compilers to find openssl@1.1 you may need to set:
 export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+# For pkg-config to find openssl@1.1 you may need to set:
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
 # Setup mysql@5.7
@@ -88,12 +93,14 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 # Setup imagemagick@6
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
-# export PKG_CONFIG_PATH="/usr/local/opt/imagemagick@6/lib/pkgconfig"
+# For compilers to find imagemagick@6 you may need to set:
+export LDFLAGS="-L/usr/local/opt/imagemagick@6/lib"
+export CPPFLAGS="-I/usr/local/opt/imagemagick@6/include"
+# For pkg-config to find imagemagick@6 you may need to set:
+export PKG_CONFIG_PATH="/usr/local/opt/imagemagick@6/lib/pkgconfig"
 
 # Setup google-cloud-sdk
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
 echo 'Loaded ~/.zshrc'
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
