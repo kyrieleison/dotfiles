@@ -87,6 +87,7 @@ NeoBundle 'prabirshrestha/asyncomplete-lsp.vim'
 NeoBundle 'prabirshrestha/vim-lsp'
 NeoBundle 'mattn/vim-lsp-settings'
 NeoBundle 'mattn/vim-goimports'
+NeoBundle 'hashivim/vim-terraform'
 
 " vim-jsx {{{
 let g:jsx_ext_required = 0
@@ -94,7 +95,9 @@ let g:jsx_ext_required = 0
 
 " vim-lsp {{{
 let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_virtual_text_enabled = 0
 " }}}
 
 " インクリメンタルサーチ

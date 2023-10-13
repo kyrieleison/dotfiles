@@ -15,6 +15,7 @@ export TERM=xterm-256color
 # Set opt
 # see: http://zsh.sourceforge.net/Doc/Release/Options.html
 setopt no_beep
+setopt share_history
 setopt hist_ignore_dups
 setopt hist_ignore_all_dups
 setopt share_history
@@ -104,3 +105,6 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.in
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
 echo 'Loaded ~/.zshrc'
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
