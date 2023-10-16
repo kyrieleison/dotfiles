@@ -5,6 +5,9 @@
 # Show hidden files and folders in Finder
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
+# Show pass bar in Finder
+defaults write com.apple.finder ShowPathbar -bool true
+
 # Hide the file in Desktop
 defaults write com.apple.finder CreateDesktop -bool false
 
