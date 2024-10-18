@@ -1,0 +1,16 @@
+# see: https://alacritty.org/config-alacritty.html
+
+import = [
+"~/.config/alacritty/nord.toml",
+]
+
+[font]
+normal = { family = "Cica", style = "Regular" }
+size = 16.0
+
+[keyboard]
+bindings = [
+  { key = "Plus", mods = "Command|Shift", action = "IncreaseFontSize" },
+  { key = "Minus", mods = "Command", action = "DecreaseFontSize" },
+  { key = "Enter", mods = "Command", action = "ToggleFullscreen" }
+]
