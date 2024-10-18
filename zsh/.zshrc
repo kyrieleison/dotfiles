@@ -182,23 +182,13 @@ alias gbrd='git branch --merged | grep -vE "^\*|master$|develop$" | xargs -I % g
 # Setup fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Setup peco
-bindkey -e
-
-if $(which peco > /dev/null); then
-  function peco-select-history() {
-    local tac
-    if $(which tac > /dev/null); then
-      tac='tac'
-    else
-      tac='tail -r'
-    fi
-    BUFFER=$(history -n 1 | \
-      eval $tac | \
-      peco --layout=bottom-up --query "$LBUFFER")
-    CURSOR=$#BUFFER
-    zle clear-screen
-  }
-  zle -N peco-select-history
-  bindkey '^r' peco-select-history
-fi
+# Setup incremental search history
+export FZF_DEFAULT_OPTS="--color='pointer:#81A1C1' --height=80% --tmux=80% --border --margin=1 --padding=1"
+incremental_search_history() {
+  selected=`history -n 1 | fzf --prompt='HIST> '`
+  BUFFER=`[ ${#selected} -gt 0 ] && echo $selected || echo $BUFFER`
+  CURSOR=${#BUFFER}
+  zle redisplay
+}
+zle -N incremental_search_history
+bindkey "^R" incremental_search_history
