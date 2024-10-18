@@ -188,7 +188,7 @@ alias gbrd='git branch --merged | grep -vE "^\*|master$|develop$" | xargs -I % g
 # Setup incremental search history
 export FZF_DEFAULT_OPTS="--color='pointer:#81A1C1' --height=80% --tmux=80% --border --margin=1 --padding=1"
 incremental_search_history() {
-  selected=`history -n 1 | fzf --prompt='HIST> '`
+  selected=`history -n 1 | tail -r | fzf --prompt='HIST> '`
   BUFFER=`[ ${#selected} -gt 0 ] && echo $selected || echo $BUFFER`
   CURSOR=${#BUFFER}
   zle redisplay
