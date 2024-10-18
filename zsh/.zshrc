@@ -182,6 +182,9 @@ alias gbrd='git branch --merged | grep -vE "^\*|master$|develop$" | xargs -I % g
 # Setup fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Setup homebrew-file
+[ -f $(brew --prefix)/etc/brew-wrap ] && source $(brew --prefix)/etc/brew-wrap
+
 # Setup incremental search history
 export FZF_DEFAULT_OPTS="--color='pointer:#81A1C1' --height=80% --tmux=80% --border --margin=1 --padding=1"
 incremental_search_history() {
