@@ -21,6 +21,10 @@ let g:airline_right_sep = "\uE0BE"
 let g:airline_extensions = ['tabline']
 " }}}
 
+" vim-ferm {{{
+let g:fern#default_hidden=1
+" }}}
+
 call jetpack#end()
 
 " --------------------------------
@@ -172,6 +176,17 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%: h').'/' : '%%'
 
 " alias :Explore -> :E
 command! E Explore
+
+" fern設定
+function! FernToggle()
+  if &filetype ==# "fern"
+    wincmd p
+  else
+    Fern . -reveal=% -drawer -width=40<CR>
+  endif
+endfunction
+
+nnoremap <silent> <Leader>e :call FernToggle()<CR>
 
 " カーソル設定
 let &t_SI .= "\e[6 q" " 挿入モードで非点滅のbarカーソル
