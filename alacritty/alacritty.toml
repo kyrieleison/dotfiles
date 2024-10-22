@@ -6,7 +6,7 @@ import = [
 
 [font]
 normal = { family = "Cica", style = "Regular" }
-size = 16.0
+size = 14.0
 
 [keyboard]
 bindings = [
