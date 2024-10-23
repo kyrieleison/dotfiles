@@ -192,3 +192,6 @@ incremental_search_history() {
 }
 zle -N incremental_search_history
 bindkey "^R" incremental_search_history
+
+# Setup asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
