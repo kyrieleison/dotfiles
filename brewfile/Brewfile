@@ -2,7 +2,6 @@
 # tap repositories and their packages
 
 tap homebrew/core
-brew anyenv
 brew awscli
 brew bash
 brew brotli

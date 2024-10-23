@@ -176,9 +176,6 @@ alias gdfc='git diff --staged'
 alias ggr='git grep'
 alias gbrd='git branch --merged | grep -vE "^\*|master$|develop$" | xargs -I % git branch -d %'
 
-# Setup anyenv
-[ -d ~/.anyenv ] && eval "$(anyenv init -)"
-
 # Setup fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
