@@ -128,15 +128,6 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
-# Set env
-export EDITOR='vim'
-export VISUAL='vim'
-export PAGER='less'
-export LANG=ja_JP.UTF-8
-export PATH="$HOME/bin:$PATH"
-export CLICOLOR=1
-export TERM=xterm-256color
-
 # Set opt
 # see: http://zsh.sourceforge.net/Doc/Release/Options.html
 setopt no_beep
