@@ -9,9 +9,9 @@ execute 'source' s:jetpackfile
 packadd vim-jetpack
 call jetpack#begin('$HOME/.config/vim')
 
-Jetpack 'tani/vim-jetpack', {'opt': 1} "bootstrap
+Jetpack 'tani/vim-jetpack', { 'opt': 1 }
+Jetpack 'junegunn/fzf'
 Jetpack 'junegunn/fzf.vim'
-Jetpack 'junegunn/fzf', { 'do': {-> fzf#install()} }
 Jetpack 'jlanzarotta/bufexplorer'
 Jetpack 'prabirshrestha/vim-lsp'
 Jetpack 'mattn/vim-lsp-settings'
@@ -32,6 +32,13 @@ let g:airline_extensions = ['tabline']
 " vim-ferm {{{
 let g:fern#default_hidden=1
 " }}}
+
+for name in jetpack#names()
+  if !jetpack#tap(name)
+    call jetpack#sync()
+    break
+  endif
+endfor
 
 call jetpack#end()
 
