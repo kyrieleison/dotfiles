@@ -31,6 +31,20 @@ let g:airline_extensions = ['tabline']
 
 " vim-ferm {{{
 let g:fern#default_hidden=1
+
+function! FernToggle()
+  if &filetype ==# "fern"
+    wincmd p
+  else
+    Fern . -reveal=% -drawer -width=40<CR>
+  endif
+endfunction
+
+nnoremap <silent> <Leader>e :call FernToggle()<CR>
+" }}}
+
+" nord-vim {{{
+colorscheme nord
 " }}}
 
 for name in jetpack#names()
@@ -41,10 +55,6 @@ for name in jetpack#names()
 endfor
 
 call jetpack#end()
-
-" --------------------------------
-" 基本設定
-" --------------------------------
 
 syntax on
 
@@ -76,46 +86,15 @@ set display+=lastline
 set clipboard=unnamed,autoselect
 set nobackup
 set noswapfile
-set t_Co=256
-
-" ステータスライン設定
+set viminfo+=n~/.local/state/vim/viminfo
 set laststatus=2
-
-" カラースキーマ設定
-colorscheme nord
-
-" シンタックスハイライト設定
-au BufRead,BufNewFile *.md\|txt    set filetype=markdown
-au BufRead,BufNewFile *.erb        set filetype=eruby.html
-au BufRead,BufNewFile *.sass\|scss set filetype=sass
-au BufRead,BufNewFile *.ts         set filetype=typescript
-au BufRead,BufNewFile *.sol        set filetype=solidity
-au BufRead,BufNewFile *.vue        set filetype=html.css
-
-" インデント設定
-set autoindent
-set smartindent
-set expandtab
-set smarttab
-set shiftwidth=2
-set tabstop=4
-set softtabstop=4
-
-au FileType vue        syntax sync fromstart
-au FileType html       setlocal sw=2 ts=2 sts=2 et
-au FileType css        setlocal sw=2 ts=2 sts=2 et
-au FileType javascript setlocal sw=2 ts=2 sts=2 et
-au FileType typescript setlocal sw=2 ts=2 sts=2 et
-au FileType markdown   setlocal sw=2 ts=2 sts=2 et
-au FileType ruby       setlocal sw=2 ts=2 sts=2 et
-au FileType less,sass  setlocal sw=2 ts=2 sts=2 et
-au FileType solidity   setlocal sw=4 ts=4 sts=4 et
-
-" キーマップ設定
 
 " Leaderを\から,に置き換え
 let mapleader = ","
-noremap \ ,
+
+" カーソル設定
+let &t_SI .= "\e[6 q" " 挿入モードで非点滅のbarカーソル
+let &t_EI .= "\e[2 q" " ノーマルモードで非点滅のblockカーソル
 
 " 表示行移動入れ替え
 nnoremap j gj
@@ -130,13 +109,12 @@ nnoremap q: <NOP>
 nnoremap q/ <NOP>
 nnoremap q? <NOP>
 
-" 画面分割操作
-
 " sを無効化
 nnoremap s <Nop>
 
 " カレントウインドウの水平分割(:split)
 nnoremap ss :<C-u>sp<CR>
+
 " カレントウインドウの垂直分割(:vsplit)
 nnoremap sv :<C-u>vs<CR>
 
@@ -147,77 +125,8 @@ nnoremap sl <C-w>l
 nnoremap sh <C-w>h
 nnoremap sw <C-w>w
 
-" 分割ウインドウの位置移動
-nnoremap sJ <C-w>J
-nnoremap sK <C-w>K
-nnoremap sL <C-w>L
-nnoremap sH <C-w>H
-nnoremap sr <C-w>r
-
-" カレントウインドウのサイズ変更
-nnoremap s= <C-w>=
-nnoremap so <C-w>_<C-w>|
-
-" ファイル移動
-nnoremap sN :<C-u>bn<CR>
-nnoremap sP :<C-u>bp<CR>
-
-" 新規タブ作成
-nnoremap st :<C-u>tabnew<CR>
-" 次のタブに切り替え
-nnoremap sn gt
-" 前のタブに切り替え
-nnoremap sp gT
-
-" カレントウインドウを閉じる(:close)
-nnoremap sq :<C-u>q<CR>
-" バッファを閉じる
-" nnoremap sQ :<C-u>bd<CR>
-
-" タブ一覧
-" nnoremap sT :<C-u>Unite tab<CR>
-" 現在のタブで開いたバッファ一覧
-" nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
-" バッファ一覧
-" nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
-
 " ファイルの曖昧検索
 nnoremap <Leader>f :FZF<CR>
+
 " ファイル全文の曖昧検索
 nnoremap <Leader>r :Rg<CR>
-
-" alias :e %:h -> :e %%
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%: h').'/' : '%%'
-
-" alias :Explore -> :E
-command! E Explore
-
-" fern設定
-function! FernToggle()
-  if &filetype ==# "fern"
-    wincmd p
-  else
-    Fern . -reveal=% -drawer -width=40<CR>
-  endif
-endfunction
-
-nnoremap <silent> <Leader>e :call FernToggle()<CR>
-
-" カーソル設定
-let &t_SI .= "\e[6 q" " 挿入モードで非点滅のbarカーソル
-let &t_EI .= "\e[2 q" " ノーマルモードで非点滅のblockカーソル
-
-" fzf設定
-function! s:fzf_neighbouring_files()
-  let current_file = expand("%")
-  let cwd = fnamemodify(current_file, ':p:h')
-  let command = 'hw "" ' . cwd
-
-  call fzf#run({
-        \ 'source': command,
-        \ 'sink':   'e',
-        \ 'options': '-m -x +s',
-        \ 'window':  'enew' })
-endfunction
-
-command! FZFNeigh call s:fzf_neighbouring_files()
