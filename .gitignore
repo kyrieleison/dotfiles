@@ -1,7 +1,7 @@
-anyenv
+asdf
+docker
 gcloud
 vim/.netrwhist
-vim/pack
 zsh/.zcompdump*
 zsh/.zim
 zsh/.zsh_sessions
