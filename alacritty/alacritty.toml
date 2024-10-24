@@ -1,5 +1,4 @@
-# see: https://alacritty.org/config-alacritty.html
-
+[general]
 import = [
 "~/.config/alacritty/nord.toml",
 ]
