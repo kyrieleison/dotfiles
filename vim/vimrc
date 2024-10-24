@@ -31,16 +31,6 @@ let g:airline_extensions = ['tabline']
 
 " vim-ferm {{{
 let g:fern#default_hidden=1
-
-function! FernToggle()
-  if &filetype ==# "fern"
-    wincmd p
-  else
-    Fern . -reveal=% -drawer -width=40<CR>
-  endif
-endfunction
-
-nnoremap <silent> <Leader>e :call FernToggle()<CR>
 " }}}
 
 " nord-vim {{{
@@ -130,3 +120,14 @@ nnoremap <Leader>f :FZF<CR>
 
 " ファイル全文の曖昧検索
 nnoremap <Leader>r :Rg<CR>
+
+" ファイルエクスプローラーのドロワー表示
+function! FernToggle()
+  if &filetype ==# "fern"
+    wincmd p
+  else
+    Fern . -reveal=% -drawer -width=40<CR>
+  endif
+endfunction
+
+nnoremap <silent> <Leader>e :call FernToggle()<CR>
