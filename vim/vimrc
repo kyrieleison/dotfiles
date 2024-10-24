@@ -6,7 +6,6 @@ endif
 
 execute 'source' s:jetpackfile
 
-packadd vim-jetpack
 call jetpack#begin('$HOME/.local/share/vim')
 
 Jetpack 'tani/vim-jetpack', { 'opt': 1 }
