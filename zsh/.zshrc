@@ -167,6 +167,13 @@ alias gdfc='git diff --staged'
 alias ggr='git grep'
 alias gbrd='git branch --merged | grep -vE "^\*|master$|develop$" | xargs -I % git branch -d %'
 
+# Support XDG base directory specification
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
+export LESSHISTFILE="$XDG_STATE_HOME"/less/history
+
+zstyle ':zim:completion' dumpfile "$XDG_CACHE_HOME"/zsh/zcompdump
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
+
 # Setup fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
