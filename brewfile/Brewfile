@@ -2,16 +2,12 @@
 # tap repositories and their packages
 
 tap homebrew/core
-brew asdf
-brew autoconf
-brew automake
 brew awscli
 brew bash
 brew brotli
 brew ca-certificates
 brew cffi
 brew colordiff
-brew coreutils
 brew cryptography
 brew ctags
 brew curl
@@ -20,7 +16,6 @@ brew eza
 brew fzf
 brew gettext
 brew glow
-brew gmp
 brew jq
 brew libevent
 brew libgit2
@@ -28,12 +23,10 @@ brew libidn2
 brew libnghttp2
 brew libsodium
 brew libssh2
-brew libtool
 brew libunistring
 brew libyaml
 brew lua
 brew lz4
-brew m4
 brew mas
 brew mpdecimal
 brew ncurses
@@ -49,13 +42,11 @@ brew reattach-to-user-namespace
 brew ripgrep
 brew rtmpdump
 brew ruby
-brew rustup
 brew sqlite
 brew the_silver_searcher
 brew tig
 brew tmux
 brew tree
-brew unixodbc
 brew utf8proc
 brew vim
 brew watch
