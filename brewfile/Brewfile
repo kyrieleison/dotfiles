@@ -64,7 +64,6 @@ cask docker
 cask google-chrome
 cask google-cloud-sdk
 cask google-japanese-ime
-cask kindle
 cask ngrok
 cask obsidian
 cask slack
@@ -75,6 +74,7 @@ tap rcmdnk/file
 brew brew-file
 
 # App Store applications
+appstore 302584613 Amazon Kindle (7.21)
 appstore 682658836 GarageBand (10.4.11)
 appstore 408981434 iMovie (10.4.1)
 appstore 409183694 Keynote (14.1)
