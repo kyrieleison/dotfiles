@@ -134,7 +134,6 @@ setopt no_beep
 setopt share_history
 setopt hist_ignore_dups
 setopt hist_ignore_all_dups
-setopt share_history
 
 # Autoload
 autoload -U colors && colors
@@ -170,6 +169,8 @@ alias gbrd='git branch --merged | grep -vE "^\*|master$|develop$" | xargs -I % g
 # Support XDG base directory specification
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export LESSHISTFILE="$XDG_STATE_HOME"/less/history
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
 
 zstyle ':zim:completion' dumpfile "$XDG_CACHE_HOME"/zsh/zcompdump
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
