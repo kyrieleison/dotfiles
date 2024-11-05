@@ -76,7 +76,7 @@ brew brew-file
 # App Store applications
 appstore 302584613 Amazon Kindle (7.21)
 appstore 682658836 GarageBand (10.4.11)
-appstore 408981434 iMovie (10.4.1)
-appstore 409183694 Keynote (14.1)
-appstore 409203825 Numbers (14.1)
-appstore 409201541 Pages (14.1)
+appstore 408981434 iMovie (10.4.2)
+appstore 409183694 Keynote (14.2)
+appstore 409203825 Numbers (14.2)
+appstore 409201541 Pages (14.2)
