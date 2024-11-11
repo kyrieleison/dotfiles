@@ -20,6 +20,12 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
+# AWS SSO Cache does not support XDG
+# https://github.com/aws/aws-cli/issues/7513
+export AWS_CONFIG_HOME="$HOME"/.aws/
+export AWS_CONFIG_FILE="$HOME"/.aws/config
+export AWS_SHARED_CREDENTIALS_FILE="$HOME"/.aws/credentials
+
 # Prevent duplicate paths
 typeset -U path PATH
 
