@@ -2,10 +2,12 @@
 # tap repositories and their packages
 
 tap homebrew/core
+brew aws-sso-util
 brew awscli
 brew bash
 brew brotli
 brew ca-certificates
+brew certifi
 brew cffi
 brew colordiff
 brew cryptography
@@ -37,6 +39,7 @@ brew pcre2
 brew peco
 brew pycparser
 brew python@3.12
+brew python@3.13
 brew readline
 brew reattach-to-user-namespace
 brew ripgrep
