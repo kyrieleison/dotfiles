@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
   name = Yuka Tsuboi
-  email = yuka.tsuboi@trustdock.io
+  email = 6261853+kyrieleison@users.noreply.github.com
   signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/Iv3r0rAr3AP2QiIyJjAo8yN7t50As1Dmnre7ZNvx+Fsi7UebBuDJM9+DmjmtxVeF9/qST0TZXutpkzjsfJMwi7CLqfWyPvP4cWr9vQJE34Kv4GBvhtShmRif2zQiWewDR5j7z5qXlGMsukiTHIKr3NfQ/6LQ0Va55/q4uQgyUkmGh/fEU5GSHOWFRfWsRthvrYmpmCOuh9XCYyS8927eNC4oabXiZQ6+RoIoJj/DrxAvChOUDw1sGVvE970rvpeDqh7BbiHSGeZAY40WvBsF82zNfFv310R1zF2W2phfHFQuWHns1wD07VKMmpLLbDE8Nk4nNmZNXNwwT5qeVYlj
 [filter "lfs"]
   clean = git-lfs clean -- %f
