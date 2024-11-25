@@ -48,14 +48,14 @@ killall Dock
 # === Mouse ===
 
 # Set movement speed of the mouse cursor, default is 1
-defaults write -g com.apple.mouse.scaling "3"
-defaults write -g com.apple.trackpad.scaling "3"
+defaults write -g com.apple.mouse.scaling "2.5"
+defaults write -g com.apple.trackpad.scaling "2.5"
 
 # === Keyboard ===
 
-# Increase key repeat rate
-defaults write -g "InitialKeyRepeat" -int "12"
-defaults write -g "KeyRepeat" -int "2"
+# Set key repeat. 1 is 15ms
+defaults write -g "InitialKeyRepeat" -int "15" # max is 15 = 225ms
+defaults write -g "KeyRepeat" -int "2"         # max is 2 = 30ms
 
 # A restart of your Mac is required to apply Mouse and Keyboard changes
 # sudo shutdown -r now
