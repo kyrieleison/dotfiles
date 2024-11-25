@@ -13,9 +13,6 @@ export XDG_DATA_HOME="$HOME"/.local/share
 export XDG_STATE_HOME="$HOME"/.local/state
 
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
-export ASDF_DIR="$XDG_CONFIG_HOME"/asdf
-export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME"/asdf/asdfrc
-export ASDF_DATA_DIR="$XDG_DATA_HOME"/asdf
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
@@ -28,9 +25,6 @@ export AWS_SHARED_CREDENTIALS_FILE="$HOME"/.aws/credentials
 
 # Prevent duplicate paths
 typeset -U path PATH
-
-# Install asdf
-[ ! -d $XDG_CONFIG_HOME/asdf ] && git clone https://github.com/asdf-vm/asdf.git $XDG_CONFIG_HOME/asdf
 
 # Install tpm
 [ ! -d $XDG_DATA_HOME/tmux/plugins/tpm ] && git clone https://github.com/tmux-plugins/tpm $XDG_DATA_HOME/tmux/plugins/tpm

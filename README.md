@@ -26,7 +26,6 @@ git clone git@github.com:kyrieleison/dotfiles.git $HOME/.config
     - カラースキーマ hybrid -> [Nord](https://github.com/nordtheme/iterm2)
 - パッケージ管理 Homebrew
     - Brewfile管理 homebrew-bundle -> [homebrew-file](https://github.com/rcmdnk/homebrew-file)
-- 言語バージョン管理 anyenv -> [asdf](https://github.com/asdf-vm/asdf)
+- 言語バージョン管理 anyenv -> [asdf](https://github.com/asdf-vm/asdf) -> [mise](https://github.com/jdx/mise)
 - ファイル検索 ripgrep
 - ファジーファインダー peco -> fzf
-

@@ -178,6 +178,9 @@ zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
 # Setup fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Setup mise
+[ -n "$(command -v mise)" ] && eval "$(mise activate zsh --shims)"
+
 # Setup homebrew-file
 [ -f $(brew --prefix)/etc/brew-wrap ] && source $(brew --prefix)/etc/brew-wrap
 
@@ -191,6 +194,3 @@ incremental_search_history() {
 }
 zle -N incremental_search_history
 bindkey "^R" incremental_search_history
-
-# Setup asdf
-. "$XDG_CONFIG_HOME/asdf/asdf.sh"

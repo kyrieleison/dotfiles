@@ -30,6 +30,7 @@ brew libyaml
 brew lua
 brew lz4
 brew mas
+brew mise
 brew mpdecimal
 brew ncurses
 brew oniguruma
@@ -50,6 +51,7 @@ brew the_silver_searcher
 brew tig
 brew tmux
 brew tree
+brew usage
 brew utf8proc
 brew vim
 brew watch
