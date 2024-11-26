@@ -11,5 +11,7 @@ size = 14.0
 bindings = [
   { key = "Plus", mods = "Command|Shift", action = "IncreaseFontSize" },
   { key = "Minus", mods = "Command", action = "DecreaseFontSize" },
-  { key = "Enter", mods = "Command", action = "ToggleFullscreen" }
+  { key = "Enter", mods = "Command", action = "ToggleFullscreen" },
+  { key = "¥", chars = "\\" },
+  { key = "¥", mods = "Alt", chars = "¥" }
 ]
