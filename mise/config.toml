@@ -1,4 +1,7 @@
 [tools]
 go = "latest"
+node = "latest"
+"npm:vite" = "latest"
+"npm:yarn" = "latest"
 ruby = "latest"
 terraform = "latest"
