@@ -20,3 +20,19 @@ incremental_search_history() {
 }
 zle -N incremental_search_history
 bindkey "^R" incremental_search_history
+
+# Setup Gemfile.local
+bundle() {
+  if [ -f Gemfile.local ]; then
+    if [[ $1 == install || -z $@ ]]; then
+      command bundle "$@"
+      BUNDLE_GEMFILE=Gemfile.local command bundle "$@"
+    elif [[ $1 == update ]]; then
+      command bundle "$@"
+    else
+      BUNDLE_GEMFILE=Gemfile.local command bundle "$@"
+    fi
+  else
+    command bundle "$@"
+  fi
+}

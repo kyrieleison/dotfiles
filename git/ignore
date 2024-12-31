@@ -1,0 +1,4 @@
+Gemfile.local
+Gemfile.local.lock
+
+*.code-workspace
