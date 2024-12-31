@@ -1,4 +1,14 @@
 Gemfile.local
 Gemfile.local.lock
 
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 *.code-workspace
+
+*mise.toml
+*mise.*.toml
+*mise.local.toml
+*mise.*.local.toml
