@@ -1,4 +1,7 @@
 [tools]
 go = "latest"
+java = "openjdk-21"
+node = "latest"
+"npm:typescript" = "latest"
 ruby = "latest"
 terraform = "latest"

@@ -65,24 +65,29 @@ cask 1password
 cask 1password-cli
 cask alacritty
 cask clipy
-cask docker
+cask docker-desktop
+cask figma
 cask font-cica-without-emoji
+cask gcloud-cli
 cask google-chrome
-cask google-cloud-sdk
 cask google-japanese-ime
 cask ngrok
 cask obsidian
 cask slack
+cask thonny
 cask visual-studio-code
 cask zoom
+
+tap kayac/tap
+brew ecspresso
 
 tap rcmdnk/file
 brew brew-file
 
 # App Store applications
 appstore 302584613 Amazon Kindle (7.23)
-appstore 682658836 GarageBand (10.4.11)
+appstore 682658836 GarageBand (10.4.12)
 appstore 408981434 iMovie (10.4.3)
-appstore 409183694 Keynote (14.2)
-appstore 409203825 Numbers (14.2)
-appstore 409201541 Pages (14.2)
+appstore 409183694 Keynote (14.3)
+appstore 409203825 Numbers (14.3)
+appstore 409201541 Pages (14.3)
