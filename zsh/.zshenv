@@ -32,5 +32,7 @@ command -v brew >/dev/null 2>&1 \
   || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Install tpm
+# https://github.com/tmux-plugins/tpm/blob/master/docs/automatic_tpm_installation.md
 [ ! -d $XDG_DATA_HOME/tmux/plugins/tpm ] \
-  && git clone https://github.com/tmux-plugins/tpm $XDG_DATA_HOME/tmux/plugins/tpm
+  && git clone https://github.com/tmux-plugins/tpm $XDG_DATA_HOME/tmux/plugins/tpm \
+  &&  $XDG_DATA_HOME/tmux/plugins/tpm/bin/install_plugins
