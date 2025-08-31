@@ -27,5 +27,10 @@ export AWS_SHARED_CREDENTIALS_FILE="$HOME"/.aws/credentials
 # Prevent duplicate paths
 typeset -U path PATH
 
+# Install homebrew
+command -v brew >/dev/null 2>&1 \
+  || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # Install tpm
-[ ! -d $XDG_DATA_HOME/tmux/plugins/tpm ] && git clone https://github.com/tmux-plugins/tpm $XDG_DATA_HOME/tmux/plugins/tpm
+[ ! -d $XDG_DATA_HOME/tmux/plugins/tpm ] \
+  && git clone https://github.com/tmux-plugins/tpm $XDG_DATA_HOME/tmux/plugins/tpm
