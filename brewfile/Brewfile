@@ -88,8 +88,6 @@ cask slack
 cask visual-studio-code
 cask zoom
 
-tap homebrew/services
-
 tap kayac/tap
 brew ecspresso
 
