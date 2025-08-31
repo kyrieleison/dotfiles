@@ -1,11 +1,11 @@
-# Setup mise
-command -v mise > /dev/null 2>&1 && eval "$(mise activate zsh --shims)"
-
 # Setup homebrew
 test -f /opt/homebrew/bin/brew && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Setup homebrew-file
 test -f $(brew --prefix)/etc/brew-wrap && source $(brew --prefix)/etc/brew-wrap
+
+# Setup mise
+command -v mise > /dev/null 2>&1 && eval "$(mise activate zsh)"
 
 # Setup fzf
 command -v fzf > /dev/null 2>&1 && source <(fzf --zsh)
