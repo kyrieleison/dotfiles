@@ -131,3 +131,43 @@ unset key
 # Setup zim completion
 zstyle ':zim:completion' dumpfile "$XDG_CACHE_HOME"/zsh/zcompdump
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
+
+#
+# duration-info
+#
+
+# 実行時間が 2 秒以上のコマンドを表示 (デフォルト)
+zstyle ':zim:duration-info' format '%d'
+
+autoload -Uz add-zsh-hook
+add-zsh-hook preexec duration-info-preexec
+add-zsh-hook precmd duration-info-precmd
+
+#
+# prompt: time と duration のセグメントを追加
+#
+
+if (( ! ${+TIME_COLOR} )) typeset -g TIME_COLOR=blue
+if (( ! ${+DURATION_COLOR} )) typeset -g DURATION_COLOR=white
+
+_prompt_eriner_time() {
+  _prompt_eriner_standout_segment ${TIME_COLOR} " %* "
+}
+
+_prompt_eriner_duration() {
+  if [[ -n ${duration_info} ]]; then
+    _prompt_eriner_standout_segment ${DURATION_COLOR} " ${duration_info} "
+  fi
+}
+
+_prompt_eriner_main() {
+  RETVAL=${?}
+  BG_COLOR=
+
+  _prompt_eriner_time
+  _prompt_eriner_status
+  _prompt_eriner_pwd
+  _prompt_eriner_git
+  _prompt_eriner_duration
+  _prompt_eriner_end
+}
