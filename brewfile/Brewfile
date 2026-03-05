@@ -2,10 +2,10 @@
 # tap repositories and their packages
 
 tap homebrew/core
-brew abseil
 brew aws-sso-util
 brew awscli
 brew bash
+brew bat
 brew brotli
 brew ca-certificates
 brew certifi
@@ -16,11 +16,14 @@ brew ctags
 brew curl
 brew direnv
 brew eza
+brew fd
 brew fzf
 brew gettext
 brew gh
 brew glow
-brew icu4c@77
+brew go
+brew golangci-lint
+brew grpcurl
 brew jq
 brew k6
 brew libevent
@@ -32,43 +35,55 @@ brew libngtcp2
 brew libsodium
 brew libssh2
 brew libunistring
+brew libuv
 brew libyaml
+brew lpeg
 brew lua
+brew luajit
+brew luv
 brew lz4
 brew mas
 brew mise
 brew mpdecimal
-brew mysql
 brew ncurses
+brew neovim
 brew oniguruma
 brew openssl@3
 brew pcre
 brew pcre2
 brew peco
-brew protobuf@29
+brew pict
 brew pycparser
 brew python@3.12
 brew python@3.13
+brew python@3.14
 brew readline
 brew reattach-to-user-namespace
 brew ripgrep
+brew rpds-py
 brew rtmpdump
 brew ruby
 brew sops
 brew sqlite
+brew tfsec
+brew tfstate-lookup
 brew the_silver_searcher
 brew tig
 brew tmux
 brew tree
+brew tree-sitter@0.25
+brew trivy
+brew unibilium
 brew usage
 brew utf8proc
 brew vim
 brew watch
 brew wget
 brew xdg-ninja
+brew xeol
 brew xz
 brew yq
-brew zlib
+brew zoxide
 brew zstd
 
 tap homebrew/cask
@@ -81,12 +96,14 @@ cask figma
 cask font-cica-without-emoji
 cask gcloud-cli
 cask google-chrome
-cask google-japanese-ime
-cask ngrok
+cask karabiner-elements
 cask obsidian
 cask slack
 cask visual-studio-code
 cask zoom
+
+tap fujiwara/tap
+brew lambroll
 
 tap kayac/tap
 brew ecspresso
@@ -94,11 +111,12 @@ brew ecspresso
 tap rcmdnk/file
 brew brew-file
 
+tap reviewdog/tap
+
 # App Store applications
-appstore 302584613 Amazon Kindle (7.23)
-appstore 682658836 GarageBand (10.4.12)
-appstore 408981434 iMovie (10.4.3)
-appstore 409183694 Keynote (14.4)
-appstore 409203825 Numbers (14.4)
-appstore 409201541 Pages (14.4)
-appstore 1475387142 Tailscale (1.86.4)
+appstore 682658836 GarageBand (10.4.13)
+appstore 408981434 iMovie (10.4.4)
+appstore 409183694 Keynote (14.5)
+appstore 409203825 Numbers (14.5)
+appstore 409201541 Pages (14.5)
+appstore 1475387142 Tailscale (1.94.1)
