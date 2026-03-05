@@ -27,9 +27,13 @@ export AWS_SHARED_CREDENTIALS_FILE="$HOME"/.aws/credentials
 # Prevent duplicate paths
 typeset -U path PATH
 
+# User-specific executable files
+# https://specifications.freedesktop.org/basedir/0.8/
+export PATH="$HOME/.local/bin:$PATH"
+
 # Install homebrew
-command -v brew >/dev/null 2>&1 \
-  || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+[ ! -d /opt/homebrew ] \
+  && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Install tpm
 # https://github.com/tmux-plugins/tpm/blob/master/docs/automatic_tpm_installation.md
