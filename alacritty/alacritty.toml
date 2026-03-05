@@ -15,6 +15,3 @@ bindings = [
   { key = "¥", chars = "\\" },
   { key = "¥", mods = "Alt", chars = "¥" }
 ]
-
-[bell]
-command = { program = "osascript", args = ["-e", "beep"] }
