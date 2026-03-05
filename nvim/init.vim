@@ -1,12 +1,13 @@
-let s:jetpackfile = '$HOME/.local/share/vim/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
-let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
+" vim-jetpack {{{
+" :JetpackSync to install/update plugins
+let s:jetpackfile = stdpath('data') . '/site/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
+let s:jetpackurl = 'https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim'
 if !filereadable(s:jetpackfile)
   call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
 endif
 
-execute 'source' s:jetpackfile
-
-call jetpack#begin('$HOME/.local/share/vim')
+packadd vim-jetpack
+call jetpack#begin()
 
 Jetpack 'tani/vim-jetpack', { 'opt': 1 }
 Jetpack 'junegunn/fzf'
@@ -20,6 +21,9 @@ Jetpack 'lambdalisue/fern.vim'
 Jetpack 'arcticicestudio/nord-vim'
 Jetpack 'vim-airline/vim-airline'
 Jetpack 'tomtom/tcomment_vim'
+
+call jetpack#end()
+" }}}
 
 " vim-airline {{{
 let g:airline_powerline_fonts = 1
@@ -35,15 +39,6 @@ let g:fern#default_hidden=1
 " nord-vim {{{
 colorscheme nord
 " }}}
-
-for name in jetpack#names()
-  if !jetpack#tap(name)
-    call jetpack#sync()
-    break
-  endif
-endfor
-
-call jetpack#end()
 
 syntax on
 
@@ -72,10 +67,9 @@ set fileformats=unix,dos,mac
 set formatoptions+=mM
 set ambiwidth=double
 set display+=lastline
-set clipboard=unnamed,autoselect
+set clipboard=unnamed
 set nobackup
 set noswapfile
-set viminfo+=n~/.local/state/vim/viminfo
 set laststatus=2
 
 " Leaderを\から,に置き換え

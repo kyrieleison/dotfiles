@@ -10,7 +10,7 @@ git clone git@github.com:kyrieleison/dotfiles.git $HOME/.config
 
 - シェル zsh
     - フレームワーク [Zim](https://github.com/zimfw/zimfw)
-- エディタ vim
+- エディタ nvim
     - パッケージ管理 [vim-jetpack](https://github.com/tani/vim-jetpack)
     - ステータスライン [vim-airline](https://github.com/vim-airline/vim-airline)
     - ファイラー [Fern](https://github.com/lambdalisue/vim-fern)
