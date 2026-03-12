@@ -76,7 +76,6 @@ brew trivy
 brew unibilium
 brew usage
 brew utf8proc
-brew vim
 brew watch
 brew wget
 brew xdg-ninja
@@ -96,6 +95,7 @@ cask figma
 cask font-cica-without-emoji
 cask gcloud-cli
 cask google-chrome
+cask google-japanese-ime
 cask karabiner-elements
 cask obsidian
 cask slack
