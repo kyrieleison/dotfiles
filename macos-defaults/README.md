@@ -1,0 +1,6 @@
+# macos-defaults
+
+```
+./setup.sh
+```
+

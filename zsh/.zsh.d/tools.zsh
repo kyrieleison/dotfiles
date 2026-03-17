@@ -20,3 +20,38 @@ incremental_search_history() {
 }
 zle -N incremental_search_history
 bindkey "^R" incremental_search_history
+
+# Setup Gemfile.local
+bundle() {
+  if [ -f Gemfile.local ]; then
+    if [[ $1 == install || -z $@ ]]; then
+      command bundle "$@"
+      BUNDLE_GEMFILE=Gemfile.local command bundle "$@"
+    elif [[ $1 == update ]]; then
+      command bundle "$@"
+    else
+      BUNDLE_GEMFILE=Gemfile.local command bundle "$@"
+    fi
+  else
+    command bundle "$@"
+  fi
+}
+
+# Setup aws sso
+awsso() {
+  PROFILE=$(cat ~/.aws/config | grep profile | awk '{print $2}' | tr -d '\]' | fzf)
+  export AWS_PROFILE="$PROFILE"
+  aws sts get-caller-identity > /dev/null 2>&1
+  if [ $? -ne 0 ]; then
+    aws sso login
+  fi
+  aws sts get-caller-identity
+}
+
+# Switch git branches
+gcof() {
+  local branch=$(git branch | grep -v '\->' | sed 's/^..//' | sort -u | fzf)
+  if [[ -n "$branch" ]]; then
+    git checkout "${branch#remotes/origin/}"
+  fi
+}

@@ -13,7 +13,7 @@ export XDG_DATA_HOME="$HOME"/.local/share
 export XDG_STATE_HOME="$HOME"/.local/state
 
 export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
-export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+# export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
