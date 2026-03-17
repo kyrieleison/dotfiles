@@ -33,7 +33,9 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Install homebrew
 [ ! -d /opt/homebrew ] \
-  && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
+  && brew install rcmdnk/file/brew-file \
+  && brew file install
 
 # Install tpm
 # https://github.com/tmux-plugins/tpm/blob/master/docs/automatic_tpm_installation.md
