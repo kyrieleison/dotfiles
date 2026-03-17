@@ -164,6 +164,18 @@ _prompt_eriner_main() {
   RETVAL=${?}
   BG_COLOR=
 
+  CURRENT_BG=
+  case ${KEYMAP} in
+    vicmd)
+      SEGMENT_SEPARATOR='%S%s'
+      STANDOUT_SEGMENT_SEPARATOR='%s%S'
+      ;;
+    *)
+      SEGMENT_SEPARATOR=''
+      STANDOUT_SEGMENT_SEPARATOR=${SEGMENT_SEPARATOR}
+      ;;
+  esac
+
   _prompt_eriner_time
   _prompt_eriner_status
   _prompt_eriner_pwd
