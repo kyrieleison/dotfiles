@@ -96,7 +96,6 @@ cask font-cica-without-emoji
 cask gcloud-cli
 cask google-chrome
 cask google-japanese-ime
-cask karabiner-elements
 cask obsidian
 cask slack
 cask visual-studio-code
